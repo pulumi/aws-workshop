@@ -1,5 +1,5 @@
 +++
-title = "Provision Amazon EC2 Virtual Machines"
+title = "Provision EC2 Virtual Machines"
 chapter = true
 weight = 30
 +++

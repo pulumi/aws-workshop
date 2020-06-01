@@ -1,5 +1,5 @@
 +++
-title = "Creating an ECS Cluster"
+title = "Creating an AWS ECS Cluster"
 chapter = false
 weight = 10
 +++

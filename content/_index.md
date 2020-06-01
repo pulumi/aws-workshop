@@ -12,9 +12,11 @@ This workshop teaches you "Modern" Infrastructure as Code (IaC) concepts through
 Topics covered include IaC fundamentals, in addition to application architectures and how to use IaC to create, update, and manage them.
 
 ### Learning Objectives
-- Deploy Cloud9 as an IDE for completing workshop exercises.
-- How DevOps patterns help to release features and functionality faster.
-- Best practices for implementing 2 pizza team pipelines.
+- Getting started with Pulumi
+- Deploy AWS EC2 Compute Infrastructure
+- Deploy AWS ECS Infrastructure
+- Deploy AWS EKS Clusters
+- Deploy applications to AWS EKS Cluster
 
 {{% notice warning %}}
 <p style='text-align: left;'>

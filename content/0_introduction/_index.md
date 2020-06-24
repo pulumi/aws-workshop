@@ -7,9 +7,9 @@ draft: false
 
 # Introduction to Pulumi
 
-A walkthrough of basic App Mesh concepts.
+A walkthrough of basic Pulumi concepts.
 
-![Title Image](/images/introduction/appmesh-product-page.png)
+![Title Image](/images/introduction/.png)
 
 Welcome to the Pulumi workshop!
 

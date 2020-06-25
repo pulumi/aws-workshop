@@ -9,7 +9,7 @@ draft: false
 
 A walkthrough of basic Pulumi concepts.
 
-![Title Image](/images/introduction/.png)
+// insert image/pulumi logo
 
 Welcome to the Pulumi workshop!
 

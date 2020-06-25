@@ -12,4 +12,4 @@ Starting from here, when you see command to be entered such as below, you will e
 1. Confirm that **AWS service** and **EC2** are selected, then click **Next** to view permissions.
 1. Confirm that **AdministratorAccess** is checked, then click **Next** to review.
 1. Enter **AppMesh-Workshop-Admin** for the Name, and select **Create Role**
-![createrole](/images/.png)
+![createrole](/images/createrole.png)

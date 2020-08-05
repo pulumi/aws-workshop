@@ -10,7 +10,7 @@ We just saw how to create new infrastructure from scratch. Next, let's make a fe
 2. Serve content from your bucket as a website.
 3. Programmatically create infrastructure.
 
-This demonstrates how declarative infrastrucutre as code tools can be used not just for initial provisioning, but also subsequent changes to existing resources.
+This demonstrates how declarative infrastructure as code tools can be used not just for initial provisioning, but also subsequent changes to existing resources.
 
 ## Step 1 &mdash; Add an Object to Your Bucket
 

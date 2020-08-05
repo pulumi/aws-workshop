@@ -93,7 +93,7 @@ Now, go back and repeat steps 1 and 2.
 
 ## Step 4 &mdash;  Verify That Stacks are Gone
 
-Verify that all of this projec'ts stacks are now gone:
+Verify that all of this project's stacks are now gone:
 
 ```bash
 pulumi stack ls

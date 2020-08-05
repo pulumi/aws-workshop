@@ -34,7 +34,7 @@ const provider = new k8s.Provider("k8sProvider", { kubeconfig });
 Now we can create the namespace using the provider we just created. Append this to your `index.ts` file:
 
 ```typescript
-let name = "sock-shop"
+const name = "sock-shop"
 const ns = new k8s.core.v1.Namespace("sock-shop-ns", {
     metadata: { name: name },
 }, { provider });
@@ -60,7 +60,7 @@ const kubeconfig = clusterStackRef.getOutput("kubeconfig");
 // Create the k8s provider with the kubeconfig.
 const provider = new k8s.Provider("k8sProvider", { kubeconfig });
 
-let name = "sock-shop"
+const name = "sock-shop"
 const ns = new k8s.core.v1.Namespace("sock-shop-ns", {
     metadata: { name: name },
 }, { provider });

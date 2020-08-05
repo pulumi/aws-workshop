@@ -29,7 +29,7 @@ const provider = new k8s.Provider("k8s", { kubeconfig: eks.getOutput("kubeconfig
 Now we can create the namespace using the provider we just created. Append this to your `index.ts` file:
 
 ```typescript
-let name = "argocd"
+const name = "argocd"
 const ns = new k8s.core.v1.Namespace("argocd-ns", {
     metadata: { name: name },
 }, { provider });
@@ -50,7 +50,7 @@ const clusterStackRef = new pulumi.StackReference(pulumiConfig.require("clusterS
 
 const provider = new k8s.Provider("k8s", { kubeconfig: clusterStackRef.getOutput("kubeconfig") });
 
-let name = "argocd"
+const name = "argocd"
 const ns = new k8s.core.v1.Namespace("argocd-ns", {
     metadata: { name: name },
 }, { provider });

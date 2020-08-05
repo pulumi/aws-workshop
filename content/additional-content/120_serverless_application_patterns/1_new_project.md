@@ -39,13 +39,17 @@ This command has created all the files we need, initialized a new stack named `d
 
 ## Step 3 &mdash; Install pulumi-aws Package
 
-Run the following command to install the AWS package:
+Run the following command to install the AWS and AWSX packages:
 
 ```bash
 npm install @pulumi/aws
 ```
 
-The package will be added to `node_modules`, `package.json`, and `package-lock.json`.
+```bash
+npm install @pulumi/awsx
+```
+
+The packages will be added to `node_modules`, `package.json`, and `package-lock.json`.
 
 ## Step 4 &mdash; Setting AWS Region
 

@@ -65,7 +65,7 @@ const argoCDNamespace = argoStackRef.getOutput("argoNamespace");
 const provider = new k8s.Provider("k8sProvider", {kubeconfig});
 
 // Declare a Namespace in which to deploy argocd
-let name = "sock-shop"
+const name = "sock-shop"
 const ns = new k8s.core.v1.Namespace("sock-shop-ns", {
     metadata: { name: name },
 }, { provider });

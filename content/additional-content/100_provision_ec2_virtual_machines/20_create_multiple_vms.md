@@ -13,7 +13,7 @@ const hostnames: any[] = [];
 const azs = await aws.getAvailabilityZones()
 for (const az of azs.names) {
     const server = new aws.ec2.Instance(`web-server-${az}`, {
-        instanceType: "t2.micro",
+        instanceType: "t3.micro",
         securityGroups: [ sg.name ],
         ami: ami,
         availabilityZone: az,
@@ -53,7 +53,7 @@ export = async () => {
     const azs = await aws.getAvailabilityZones()
     for (const az of azs.names) {
         const server = new aws.ec2.Instance(`web-server-${az}`, {
-            instanceType: "t2.micro",
+            instanceType: "t3.micro",
             securityGroups: [ sg.name ],
             ami: ami,
             availabilityZone: az,
@@ -83,25 +83,25 @@ You will see output like the following:
 ```
 Updating (dev):
 
-     Type                 Name                      Status
+     Type                 Name                   Status
      pulumi:pulumi:Stack  iac-workshop-dev
- +   ├─ aws:ec2:Instance  web-server-eu-central-1a  created
- +   ├─ aws:ec2:Instance  web-server-eu-central-1b  created
- +   ├─ aws:ec2:Instance  web-server-eu-central-1c  created
- -   └─ aws:ec2:Instance  web-server                deleted
+ +   ├─ aws:ec2:Instance  web-server-us-west-2a  created
+ +   ├─ aws:ec2:Instance  web-server-us-west-2b  created
+ +   ├─ aws:ec2:Instance  web-server-us-west-2c  created
+ -   └─ aws:ec2:Instance  web-server             deleted
 
 Outputs:
   + hostnames     : [
-  +     [0]: "ec2-18-197-184-46.eu-central-1.compute.amazonaws.com"
-  +     [1]: "ec2-18-196-225-191.eu-central-1.compute.amazonaws.com"
-  +     [2]: "ec2-35-158-83-62.eu-central-1.compute.amazonaws.com"
+  +     [0]: "ec2-18-197-184-46.us-west-2.compute.amazonaws.com"
+  +     [1]: "ec2-18-196-225-191.us-west-2.compute.amazonaws.com"
+  +     [2]: "ec2-35-158-83-62.us-west-2.compute.amazonaws.com"
     ]
   + ips           : [
   +     [0]: "18.197.184.46"
   +     [1]: "18.196.225.191"
   +     [2]: "35.158.83.62"
     ]
-  - publicHostname: "ec2-52-57-250-206.eu-central-1.compute.amazonaws.com"
+  - publicHostname: "ec2-52-57-250-206.us-west-2.compute.amazonaws.com"
   - publicIp      : "52.57.250.206"
 
 Resources:
@@ -129,7 +129,7 @@ for i in {0..2}; do curl $(pulumi stack output hostnames | jq -r ".[${i}]"); don
 Note that the webserver number is included in its response:
 
 ```
-Hello, World -- from eu-central-1a!
-Hello, World -- from eu-central-1b!
-Hello, World -- from eu-central-1c!
+Hello, World -- from us-west-2a!
+Hello, World -- from us-west-2b!
+Hello, World -- from us-west-2c!
 ```

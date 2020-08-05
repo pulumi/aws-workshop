@@ -17,7 +17,7 @@ pulumi stack init prod
 Next, configure its two required variables:
 
 ```bash
-pulumi config set aws:region eu-west-1
+pulumi config set aws:region us-west-2
 pulumi config set iac-workshop:siteDir wwwprod
 ```
 
@@ -75,7 +75,7 @@ Updating (prod):
  +   └─ aws:s3:BucketObject  index.html         created
 
 Outputs:
-    bucketEndpoint: "http://my-bucket-5692022.s3-website-eu-west-1.amazonaws.com"
+    bucketEndpoint: "http://my-bucket-5692022.s3-website-us-west-2.amazonaws.com"
     bucketName    : "my-bucket-5692022"
 
 Resources:

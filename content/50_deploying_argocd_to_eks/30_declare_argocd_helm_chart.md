@@ -43,6 +43,8 @@ Lastly, we need to get the Url of our ArgoCD deployment:
 export const url = argocd.getResourceProperty("v1/Service", `${name}/argocd-server`, "status").apply(status => status.loadBalancer.ingress[0].hostname)
 ```
 
+The ArgoCRD deployed by the Helm chart is outside of the management of Pulumi. However, Pulumi can still query the Helm chart resource to extract resource properties.
+
 {{% notice info %}}
 The `index.ts` file should now have the following contents:
 {{% /notice %}}
@@ -60,7 +62,7 @@ const clusterStackRef = new pulumi.StackReference(pulumiConfig.require("clusterS
 const provider = new k8s.Provider("k8s", { kubeconfig: clusterStackRef.getOutput("kubeconfig") });
 
 // Declare a Namespace in which to deploy argocd
-let name = "argocd"
+const name = "argocd"
 const ns = new k8s.core.v1.Namespace("argocd-ns", {
     metadata: { name: name },
 }, { provider });

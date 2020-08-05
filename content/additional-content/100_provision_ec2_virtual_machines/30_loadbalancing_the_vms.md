@@ -47,7 +47,7 @@ export const ips: any[] = [];
 export const hostnames: any[] = [];
 for (const az of aws.getAvailabilityZones().names) {
     const server = new aws.ec2.Instance(`web-server-${az}`, {
-        instanceType: "t2.micro",
+        instanceType: "t3.micro",
         securityGroups: [ sg.name ],
         ami: ami,
         availabilityZone: az,
@@ -96,7 +96,7 @@ export = async () => {
     const azs = await aws.getAvailabilityZones()
     for (const az of azs.names) {
         const server = new aws.ec2.Instance(`web-server-${az}`, {
-            instanceType: "t2.micro",
+            instanceType: "t3.micro",
             securityGroups: [ sg.name ],
             ami: ami,
             availabilityZone: az,
@@ -138,12 +138,12 @@ Updating (dev):
  +   │  └─ awsx:x:ec2:Subnet                       default-vpc-eb926d81-public-1    created
  +   └─ aws:lb:ApplicationLoadBalancer             web-traffic                      created
  +      ├─ awsx:lb:ApplicationTargetGroup          web-listener                     created
- +      │  ├─ awsx:lb:TargetGroupAttachment        web-target-eu-central-1a         created
- +      │  │  └─ aws:lb:TargetGroupAttachment      web-target-eu-central-1a         created
- +      │  ├─ awsx:lb:TargetGroupAttachment        web-target-eu-central-1b         created
- +      │  │  └─ aws:lb:TargetGroupAttachment      web-target-eu-central-1b         created
- +      │  ├─ awsx:lb:TargetGroupAttachment        web-target-eu-central-1c         created
- +      │  │  └─ aws:lb:TargetGroupAttachment      web-target-eu-central-1c         created
+ +      │  ├─ awsx:lb:TargetGroupAttachment        web-target-us-west-2a            created
+ +      │  │  └─ aws:lb:TargetGroupAttachment      web-target-us-west-2a            created
+ +      │  ├─ awsx:lb:TargetGroupAttachment        web-target-us-west-2b            created
+ +      │  │  └─ aws:lb:TargetGroupAttachment      web-target-us-west-2b            created
+ +      │  ├─ awsx:lb:TargetGroupAttachment        web-target-us-west-2c            created
+ +      │  │  └─ aws:lb:TargetGroupAttachment      web-target-us-west-2c            created
  +      │  └─ aws:lb:TargetGroup                   web-listener                     created
  +      ├─ awsx:x:ec2:SecurityGroup                web-traffic-0                    created
  +      ├─ awsx:lb:ApplicationListener             web-listener                     created
@@ -156,15 +156,15 @@ Updating (dev):
 
 Outputs:
     hostnames: [
-        [0]: "ec2-18-197-184-46.eu-central-1.compute.amazonaws.com"
-        [1]: "ec2-18-196-225-191.eu-central-1.compute.amazonaws.com"
-        [2]: "ec2-35-158-83-62.eu-central-1.compute.amazonaws.com"
+        [0]: "ec2-18-197-184-46.us-west-2.compute.amazonaws.com"
+        [1]: "ec2-18-196-225-191.us-west-2.compute.amazonaws.com"
+        [2]: "ec2-35-158-83-62.us-west-2.compute.amazonaws.com"
     ]
     ips      : [
         [0]: "18.197.184.46"
         [1]: "18.196.225.191"
         [2]: "35.158.83.62"
-  + url      : "web-traffic-09348bc-723263075.eu-central-1.elb.amazonaws.com"
+  + url      : "web-traffic-09348bc-723263075.us-west-2.elb.amazonaws.com"
 
 Resources:
     + 20 created
@@ -185,14 +185,14 @@ for i in {0..10}; do curl $(pulumi stack output url); done
 Observe that the resulting text changes based on where the request is routed:
 
 ```
-Hello, World -- from eu-central-1b!
-Hello, World -- from eu-central-1c!
-Hello, World -- from eu-central-1a!
-Hello, World -- from eu-central-1b!
-Hello, World -- from eu-central-1b!
-Hello, World -- from eu-central-1a!
-Hello, World -- from eu-central-1c!
-Hello, World -- from eu-central-1a!
-Hello, World -- from eu-central-1c!
-Hello, World -- from eu-central-1b!
+Hello, World -- from us-west-2b!
+Hello, World -- from us-west-2c!
+Hello, World -- from us-west-2a!
+Hello, World -- from us-west-2b!
+Hello, World -- from us-west-2b!
+Hello, World -- from us-west-2a!
+Hello, World -- from us-west-2c!
+Hello, World -- from us-west-2a!
+Hello, World -- from us-west-2c!
+Hello, World -- from us-west-2b!
 ```

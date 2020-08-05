@@ -96,7 +96,7 @@ Updating (dev):
  +      └─ aws:ecs:Service                            app-svc                     created
 
 Outputs:
-  + url: "app-lb-fd7bd4b-538931589.eu-central-1.elb.amazonaws.com"
+  + url: "app-lb-fd7bd4b-538931589.us-west-2.elb.amazonaws.com"
 
 Resources:
     + 20 created

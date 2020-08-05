@@ -35,7 +35,7 @@ Create the server. Notice it has a startup script that spins up a simple Python 
 
 ```typescript
 const server = new aws.ec2.Instance("web-server", {
-    instanceType: "t2.micro",
+    instanceType: "t3.micro",
     securityGroups: [ sg.name ],
     ami: ami,
     userData: "#!/bin/bash\n"+
@@ -75,7 +75,7 @@ const sg = new aws.ec2.SecurityGroup("web-secgrp", {
 });
 
 const server = new aws.ec2.Instance("web-server", {
-    instanceType: "t2.micro",
+    instanceType: "t3.micro",
     securityGroups: [ sg.name ],
     ami: ami,
     userData: "#!/bin/bash\n"+
@@ -105,7 +105,7 @@ Updating (dev):
  +   └─ aws:ec2:Instance       web-server        created
 
 Outputs:
-    hostname: "ec2-52-57-250-206.eu-central-1.compute.amazonaws.com"
+    hostname: "ec2-52-57-250-206.us-west-2.compute.amazonaws.com"
     ip      : "52.57.250.206"
 
 Resources:

@@ -8,7 +8,7 @@ These hands-on labs will walk you through various cloud infrastructure tasks. Th
 
 ## Pulumi
 
-You will use Pulumi to depoy infrastructure changes using code. [Install Pulumi here](https://www.pulumi.com/docs/get-started/install/). After installing the CLI, verify that it is working:
+You will use Pulumi to deploy infrastructure changes using code. [Install Pulumi here](https://www.pulumi.com/docs/get-started/install/). After installing the CLI, verify that it is working:
  
 ```bash
 $ pulumi version

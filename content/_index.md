@@ -8,15 +8,16 @@ weight: 1
 
 ### Welcome
 
-This workshop teaches you "Modern" Infrastructure as Code (IaC) concepts through a series of hands-on labs, using [Pulumi](http://pulumi.com/).
+This workshop teaches you Modern Infrastructure as Code (IaC) concepts through a series of hands-on labs, using [Pulumi](http://pulumi.com/).
 Topics covered include IaC fundamentals, in addition to application architectures and how to use IaC to create, update, and manage them.
 
 ### Learning Objectives
+- Modern Infrastructure as Code fundamentals
 - Getting started with Pulumi
-- Deploy Amazon EC2 Compute Infrastructure
-- Deploy Amazon ECS Infrastructure
-- Deploy Amazon EKS Clusters
-- Deploy applications to Amazon EKS Cluster
+- Deploy a static website on S3
+- Deploy Amazon EKS Cluster infrastructure
+- Deploy application workloads to Kubernetes
+- Test our AWS infrastructure
 
 {{% notice warning %}}
 <p style='text-align: left;'>

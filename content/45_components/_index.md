@@ -1,7 +1,7 @@
 +++
-title = "Deploying Applications to EKS"
+title = "Creating Infrastructure Components"
 chapter = true
-weight = 40
+weight = 45
 +++
 
 # Creating Infrastructure Components - Kubernetes
